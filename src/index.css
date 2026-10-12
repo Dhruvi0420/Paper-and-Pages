@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #F5F0FA;
+  --color-brand-100: #EBE0F5;
+  --color-brand-200: #D8C4E8;
+  --color-brand-300: #C4A8DB;
+  --color-brand-400: #B8A0D8;
+  --color-brand-500: #9B80C8;
+  --color-brand-600: #7E60B8;
+  --color-brand-700: #6B50B8;
+  --color-brand-800: #5A3FA0;
+  --color-brand-900: #4A3088;
+
+  --color-warm-50: #FDF8F4;
+  --color-warm-100: #F5EDE4;
+  --color-warm-200: #E8D5C4;
+  --color-warm-300: #D9C0A8;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Light mode defaults */
+  body {
+    background-color: #FAFAFA;
+    color: #1a1a2e;
+  }
+
+  /* Dark mode */
+  body.dark {
+    background-color: #0f0f1a;
+    color: #e4e0ee;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8A0D8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9B80C8;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: #5A3FA0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease both;
+}
+.animate-slideInRight {
+  animation: slideInRight 0.4s ease-out both;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
