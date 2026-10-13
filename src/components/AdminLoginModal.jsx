@@ -13,8 +13,8 @@ export default function AdminLoginModal({ isOpen, onClose, onLoginSuccess, darkM
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === 'admin' && (password === 'admin1234' || password === 'admin')) { setError(''); onLoginSuccess(); onClose(); }
-    else setError('Invalid credentials. Use admin / admin1234');
+    if (username === 'admin' && password === '1234') { setError(''); onLoginSuccess(); onClose(); }
+    else setError('Invalid credentials. Use admin / 1234');
   };
 
   return (
@@ -33,7 +33,7 @@ export default function AdminLoginModal({ isOpen, onClose, onLoginSuccess, darkM
           <button type="submit" className="w-full py-3 rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-semibold text-sm shadow-md cursor-pointer">Sign In</button>
         </form>
         <div className={`mt-5 pt-4 border-t text-center ${darkMode ? 'border-brand-800' : 'border-brand-100'}`}>
-          <button onClick={() => { setUsername('admin'); setPassword('admin1234'); setError(''); onLoginSuccess(); onClose(); }}
+          <button onClick={() => { setUsername('admin'); setPassword('1234'); setError(''); onLoginSuccess(); onClose(); }}
             className="text-xs text-brand-500 hover:text-brand-600 hover:underline font-semibold flex items-center justify-center gap-1 mx-auto cursor-pointer">
             <KeyRound className="w-3.5 h-3.5" /> Quick Demo Login
           </button>
